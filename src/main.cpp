@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 {
     string src, dst;
     FileReader reader;
+    vector<string> out_order = {"x", "y" ,"z", "t", "sensor", "tag"};
 
     if (argc != 3){
         cerr << "expected 2 arguments: src_file_path and dst_file_path" << endl;
@@ -18,5 +19,6 @@ int main(int argc, char *argv[])
     dst = argv[2];
 
     Table table = reader.read_file(src, LINE);
+    table.set_cols_order(out_order);
     reader.write_file(dst, table, CSV);
 }
