@@ -8,10 +8,10 @@ include_directories(
 ${PROJECT_SOURCE_DIR}/include
 ${EIGEN3_INCLUDE_DIR}
 )
-target_link_libraries(${PROJECT_NAME} 
-${EIGEN3_LIBS})
 
 
 file(GLOB SOURCES "src/*.cpp")
 
 add_executable(test_1 ${SOURCES})
+target_link_libraries(test_1 
+${EIGEN3_LIBS})
