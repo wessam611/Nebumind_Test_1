@@ -11,12 +11,13 @@ using namespace std;
 class Table{
 public:
     void set_headers(vector<string>);
+    vector<string> get_headers();
     void add_row(vector<string>);
     int size();
     vector<string> get_row(int);
     string get_element(int, string header);
     void set_element(int, string header, string val);
 private:
-    vector<string>* headers;
+    vector<string> headers;
     vector<vector<string>> rows;
 };
